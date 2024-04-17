@@ -6,12 +6,13 @@
         <FormKit
             type="form"
             :submit-attrs="{
-                inputClass: 'w-full justify-center duration-300',
-                outerClass: '!w-full !max-w-full',
+                inputClass:
+                    'w-full justify-center duration-300 bg-white !text-blue-500 duration-300 hover:bg-gray-50',
+                outerClass: '!w-full !max-w-full px-8',
                 submitLabel: 'إتمام عملية الدفع',
             }"
         >
-            <div class="flex">
+            <div class="flex gap-6 p-8">
                 <div class="w-full">
                     <FormKit
                         type="text"
@@ -44,9 +45,10 @@
                         outer-class=" max-w-full"
                     />
                 </div>
-                <div class="p-6 w-full">
-                    <div class="w-full h-full bg-gray-100 rounded"></div>
-                </div>
+                <!-- image -->
+                <div
+                    class="w-full hidden md:block my-3 bg-gray-100 rounded-xl"
+                ></div>
             </div>
         </FormKit>
     </div>

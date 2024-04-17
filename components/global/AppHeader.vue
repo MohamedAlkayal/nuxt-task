@@ -22,24 +22,6 @@
                 >
                     الباقات
                 </nuxt-link>
-                <nuxt-link
-                    class="duration-300 text-gray-500 hover:text-blue-500"
-                    to="/"
-                >
-                    المشاريع
-                </nuxt-link>
-                <nuxt-link
-                    class="duration-300 text-gray-500 hover:text-blue-500"
-                    to="/"
-                >
-                    تواصل معنا
-                </nuxt-link>
-                <nuxt-link
-                    class="duration-300 text-gray-500 hover:text-blue-500"
-                    to="/"
-                >
-                    من نحن
-                </nuxt-link>
             </div>
             <nav class="flex flex-row-reverse items-center gap-12">
                 <div v-if="user">

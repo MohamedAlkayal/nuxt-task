@@ -5,7 +5,7 @@
                 <BanknotesIcon class="w-6 h-6 text-blue-500" />
                 <span>المبلغ المطلوب دفعه</span>
             </p>
-            <p>0 LE</p>
+            <p>{{ paymentAmount }} LE</p>
         </div>
         <div
             class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-center"
@@ -73,5 +73,14 @@ const emit = defineEmits(['methodSelected'])
 const handleMethodSelected = (id) => {
     selectedMethod.value = id
     emit('methodSelected', id)
+}
+
+const route = useRoute()
+const paymentAmount = computed(getPaymentAmount)
+
+function getPaymentAmount() {
+    const paymentMethodId = route.params.id
+    // get one package endpoint using the id
+    return 0
 }
 </script>
