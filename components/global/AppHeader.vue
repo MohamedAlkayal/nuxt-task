@@ -1,15 +1,39 @@
 <template>
-    <header class="p-8 shadow mb-8">
+    <header class="p-8 py-4 shadow mb-8">
         <div class="container flex justify-between items-center mx-auto">
             <div class="flex items-center gap-8">
                 <nuxt-link class="font-bold text-xl" to="/">
                     UPGRADE
                 </nuxt-link>
                 <nuxt-link
-                    class="text-lg duration-300 hover:text-blue-500"
+                    class="duration-300 text-gray-500 hover:text-blue-500"
                     to="/"
                 >
-                    الباقات والدفع
+                    الرئيسية
+                </nuxt-link>
+                <nuxt-link
+                    class="duration-300 text-gray-500 hover:text-blue-500"
+                    to="/packages"
+                >
+                    الباقات
+                </nuxt-link>
+                <nuxt-link
+                    class="duration-300 text-gray-500 hover:text-blue-500"
+                    to="/"
+                >
+                    المشاريع
+                </nuxt-link>
+                <nuxt-link
+                    class="duration-300 text-gray-500 hover:text-blue-500"
+                    to="/"
+                >
+                    تواصل معنا
+                </nuxt-link>
+                <nuxt-link
+                    class="duration-300 text-gray-500 hover:text-blue-500"
+                    to="/"
+                >
+                    من نحن
                 </nuxt-link>
             </div>
             <nav class="flex flex-row-reverse items-center gap-12">
