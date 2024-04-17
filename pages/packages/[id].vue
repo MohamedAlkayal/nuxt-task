@@ -1,49 +1,61 @@
 <template>
-    <div class="container px-12">
-        <div class="p-4 px-6 bg-blue-50 flex gap-3 text-gray-800">
-            <InformationCircleIcon class="w-6 h-6 pt-1" />
-            <p class="text-sm">
-                يرجى ملاحظة أن كل معاملة تحتاج إلى نقطة واحدة لإنجازها بنجاح
-                ستتوقف عمليتك إذا لم يكن لديك ما يكفي من النقاط وقبل حدوث ذلك
-                سيتم إرسال بريد إلكتروني لإعلامك
-            </p>
-        </div>
+    <div class="container mx-auto px-12">
+        <PaymentsNote />
+        <PaymentsMethods @methodSelected="updateSelectedMethod" />
+        <div>{{ selectedMethod }}</div>
         <FormKit
-            v-model="value"
-            type="radio"
-            label="Mailing List"
-            :options="[
-                {
-                    label: 'FormKit Superfans',
-                    help: '3974 subscribers',
-                    value: 'super',
-                },
-                {
-                    label: 'FormKit Fanatics',
-                    help: '1492 subscribers',
-                    value: 'fanatics',
-                },
-                {
-                    label: 'Native HTML Absolutists',
-                    help: '3 subscribers',
-                    value: 'absolute',
-                },
-            ]"
-            :classes="{
-                fieldset: 'border-none',
-                wrapper: 'group/wrapper',
-                option: 'relative border p-6 mb-4 rounded-md formkit-checked:border-none',
-                decorator:
-                    '$reset absolute top-0 left-0 right-0 bottom-0 rounded-md group-data-[checked=true]/wrapper:ring',
-                decoratorIcon: '$reset hidden',
-                label: '$reset text-lg text-gray-600 text-bold mt-0 mb-4',
-                optionHelp: '$reset text-sm text-gray-500',
+            type="form"
+            :submit-attrs="{
+                inputClass: 'w-full justify-center duration-300',
+                outerClass: '!w-full !max-w-full',
+                submitLabel: 'إتمام عملية الدفع',
             }"
-            help="Choose your preferred list"
-        />
+        >
+            <div class="flex">
+                <div class="w-full">
+                    <FormKit
+                        type="text"
+                        label="رقم البطاقة"
+                        label-class="pr-3 mb-4 text-black/60"
+                        outer-class="h-24 max-w-full"
+                    />
+                    <FormKit
+                        type="password"
+                        label="مالك البطاقة"
+                        label-class="pr-3 mb-4 text-black/60"
+                        outer-class=" max-w-full"
+                    />
+                    <FormKit
+                        type="password"
+                        label="مالك البطاقة"
+                        label-class="pr-3 mb-4 text-black/60"
+                        outer-class=" max-w-full"
+                    />
+                    <FormKit
+                        type="password"
+                        label="CSV"
+                        label-class="pr-3 mb-4 text-black/60"
+                        outer-class=" max-w-full"
+                    />
+                    <FormKit
+                        type="date"
+                        label="تاريخ إنتهاء البطاقة"
+                        label-class="pr-3 mb-4 text-black/60"
+                        outer-class=" max-w-full"
+                    />
+                </div>
+                <div class="p-6 w-full">
+                    <div class="w-full h-full bg-gray-100 rounded"></div>
+                </div>
+            </div>
+        </FormKit>
     </div>
 </template>
 
 <script setup>
-import { InformationCircleIcon } from '@heroicons/vue/24/outline'
+const selectedMethod = ref(1)
+
+const updateSelectedMethod = (methodId) => {
+    selectedMethod.value = methodId
+}
 </script>

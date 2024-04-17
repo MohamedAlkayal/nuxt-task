@@ -19,7 +19,6 @@ export const useAuthStore = defineStore('auth', () => {
         user.value = data._rawValue
         return data
     }
-
     function logout() {
         user.value = null
         localStorage.removeItem('token')
@@ -27,7 +26,6 @@ export const useAuthStore = defineStore('auth', () => {
         localStorage.removeItem('user')
         sessionStorage.removeItem('user')
     }
-
     function refreshUser() {
         const storedUser =
             localStorage.getItem('user') || sessionStorage.getItem('user')
@@ -43,6 +41,5 @@ export const useAuthStore = defineStore('auth', () => {
             }
         }
     }
-
     return { user, login, logout, refreshUser }
 })

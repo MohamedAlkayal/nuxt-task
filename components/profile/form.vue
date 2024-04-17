@@ -99,15 +99,18 @@
                     id="upload"
                     class="hidden"
                     accept="image/*"
+                    @change="handleFileUpload"
                 />
                 <label
                     for="upload"
                     class="cursor-pointer w-full border-2 border-dashed border-blue-500 flex justify-center items-center gap-4 p-10 rounded-xl duration-300 hover:bg-blue-50"
                 >
                     <PhotoIcon class="w-8 h-8 text-blue-500" />
-                    <span class="text-blue-500 font-medium"
-                        >ارفع صورة شخصية</span
+                    <span
+                        class="text-blue-500 font-medium max-w-2/3 overflow-hidden overflow-ellipsis"
                     >
+                        {{ fileName ? fileName : 'إرفع صورة شخصية' }}
+                    </span>
                 </label>
             </div>
         </div>
@@ -120,6 +123,12 @@ const handleIconClick = (node, e) => {
     node.props.suffixIcon =
         node.props.suffixIcon === 'eye' ? 'eyeClosed' : 'eye'
     node.props.type = node.props.type === 'password' ? 'text' : 'password'
+}
+
+const fileName = ref('')
+const handleFileUpload = (event) => {
+    const file = event.target.files[0]
+    fileName.value = file.name
 }
 
 const { user } = defineProps({

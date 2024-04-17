@@ -1,6 +1,7 @@
 <template>
     <div class="container px-16 mx-auto">
-        <p class="mb-6 font-bold text-lg text-gray-700">
+        <p class="mb-6 font-bold text-lg text-gray-700 flex items-center gap-3">
+            <CheckBadgeIcon class="text-blue-500 h-8 w-8" />
             الباقات المتاحة في الوقت الحالي
         </p>
         <div
@@ -86,5 +87,5 @@ import {
 } from '@heroicons/vue/24/outline'
 const packagesData = ref(null)
 const { data, pending } = await useApiFetch('/packages', { lazy: true })
-packagesData.value = data?._rawValue.data
+packagesData.value = data?._rawValue?.data
 </script>

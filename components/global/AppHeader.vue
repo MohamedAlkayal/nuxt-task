@@ -2,7 +2,12 @@
     <header class="p-8 py-4 shadow mb-8">
         <div class="container flex justify-between items-center mx-auto">
             <div class="flex items-center gap-8">
-                <nuxt-link class="font-bold text-xl" to="/">
+                <nuxt-link class="font-bold text-xl flex items-center" to="/">
+                    <img
+                        src="https://flowbite.com/docs/images/logo.svg"
+                        class="h-8 me-3"
+                        alt="FlowBite Logo"
+                    />
                     UPGRADE
                 </nuxt-link>
                 <nuxt-link
