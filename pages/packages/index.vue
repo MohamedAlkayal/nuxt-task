@@ -17,13 +17,7 @@
                 :pkg="pkg"
             />
         </div>
-        <div v-else-if="!packagesData && pending" class="text-center">
-            Loading ...
-        </div>
-        <div v-else>
-            No packages available right now, try refreshing the page it could be
-            a server issue.
-        </div>
+        <div v-else class="text-center">Loading ...</div>
     </div>
 </template>
 <script setup>
@@ -34,7 +28,8 @@ definePageMeta({
     auth: true,
 })
 
-const packagesData = ref(null)
-const { data, pending } = await useApiFetch('/packages', { lazy: true })
-packagesData.value = data?._rawValue?.data
+const { data: packagesData } = useAsyncData(async () => {
+    const { data } = await useApiFetch('/packages')
+    return data?._rawValue?.data
+})
 </script>
