@@ -18,5 +18,6 @@
 <script setup>
 definePageMeta({
     layout: 'auth',
+    guest: true,
 })
 </script>

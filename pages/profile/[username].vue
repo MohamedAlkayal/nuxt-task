@@ -1,6 +1,6 @@
 <template>
     <Head>
-        <Title> username - UPGRADE </Title>
+        <Title> {{ user?.username }} - UPGRADE </Title>
     </Head>
 
     <div class="container px-4 mx-auto">
@@ -17,4 +17,8 @@
 
 <script setup>
 const user = computed(() => useAuthStore().user)
+
+definePageMeta({
+    auth: true,
+})
 </script>

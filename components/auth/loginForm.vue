@@ -62,6 +62,12 @@ const handleIconClick = (node, e) => {
 const auth = useAuthStore()
 const router = useRouter()
 
+onBeforeMount(() => {
+    if (auth.user) {
+        navigateTo('/')
+    }
+})
+
 const handleLogin = async ({ email, password, remember }, node) => {
     try {
         await auth.login({ email, password, remember })

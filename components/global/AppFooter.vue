@@ -74,7 +74,7 @@
                             </li>
                             <li>
                                 <NuxtLink to="#" class="hover:underline"
-                                    >info@pos.upgrade-ai.net</NuxtLink
+                                    >info@mail.net</NuxtLink
                                 >
                             </li>
                         </ul>
@@ -88,8 +88,8 @@
                 <span
                     class="text-sm text-gray-500 sm:text-center dark:text-gray-400"
                     >© 2023
-                    <NuxtLink to="#" class="hover:underline">UPGRADE</NuxtLink>.
-                    All Rights Reserved.
+                    <NuxtLink to="#" class="hover:underline">UPGRADE</NuxtLink>
+                    All Rights Reserved
                 </span>
             </div>
         </div>
